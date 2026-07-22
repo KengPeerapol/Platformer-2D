@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    [SerializeField] private Transform playerSpawnPoint;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerController>())
+        if (collision.CompareTag("Player"))
         {
-            collision.gameObject.transform.position = playerSpawnPoint.position;
-            FindAnyObjectByType<GameOverManager>().ReduceLives();
+            PlayerController player = collision.GetComponent<PlayerController>();
+
+            if (player != null)
+            {
+                // ส่งตัว player ไปให้ LivesManager จัดการลดชีวิตและวาร์ป
+                if (LivesManager.Instance != null)
+                {
+                    LivesManager.Instance.LoseLife(player);
+                }
+            }
         }
     }
 }

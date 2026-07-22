@@ -66,7 +66,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.53360856, y: -0.2799183}
@@ -93,7 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439b510827b75342bf28da8ac83b82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trap
-  playerSpawnPoint: {fileID: 0}
 --- !u!1 &3154017921183883021
 GameObject:
   m_ObjectHideFlags: 0

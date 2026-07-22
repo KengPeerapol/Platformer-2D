@@ -85,7 +85,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6367560908665664636, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ba4b401d51820419b8f1562ed15da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
+  moveSpeed: 7
   jumpForce: 14
   groundCheck: {fileID: 4784667420093498482}
   groundCheckRadius: 0.2
@@ -147,6 +147,15 @@ MonoBehaviour:
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   amountOfJumps: 1
+  dashSpeed: 20
+  dashDuration: 0.2
+  dashCooldown: 0.5
+  dashTrail: {fileID: 0}
+  dashColor: {r: 1, g: 1, b: 1, a: 0.5}
+  cameraTarget: {fileID: 0}
+  lookDownOffset: -4
+  lookSpeed: 5
+  timeToLook: 0.5
 --- !u!61 &1565134982859390550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +190,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03610885, y: -0.23756075}
+  m_Offset: {x: -0.032479346, y: -0.23393106}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -191,7 +200,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4952066, y: 1.5525875}
+  m_Size: {x: 1.4589118, y: 1.5453281}
   m_EdgeRadius: 0
 --- !u!95 &407184856147960953
 Animator:
@@ -226,7 +235,7 @@ GameObject:
   - component: {fileID: 817068816325064590}
   - component: {fileID: 4149617393358404981}
   - component: {fileID: 2413113518055521427}
-  - component: {fileID: 1459419651461657304}
+  - component: {fileID: 621765450934760897}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -269,7 +278,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 3773455386781896881}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -323,7 +332,7 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
---- !u!114 &1459419651461657304
+--- !u!114 &621765450934760897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
